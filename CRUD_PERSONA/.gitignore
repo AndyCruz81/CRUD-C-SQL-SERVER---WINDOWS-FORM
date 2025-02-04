@@ -1,0 +1,21 @@
+# Carpetas innecesarias
+.vs/
+bin/
+obj/
+packages/
+
+# Archivos de configuración del usuario
+*.suo
+*.user
+*.vssscc
+*.vspscc
+*.dbmdl
+*.opendb
+
+# Archivos de Entity Framework que se pueden regenerar
+*.edmx
+*.edmx.diagram
+*.tt
+
+# Dependencias de NuGet (si restauras con NuGet Restore)
+packages.config
