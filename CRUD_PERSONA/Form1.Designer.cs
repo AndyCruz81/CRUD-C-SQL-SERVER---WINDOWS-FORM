@@ -32,14 +32,14 @@ namespace CRUD_PERSONA
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPersona = new System.Windows.Forms.DataGridView();
             this.lblEdad = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -66,15 +66,17 @@ namespace CRUD_PERSONA
             this.btnInsertar.TabIndex = 2;
             this.btnInsertar.Text = "INSERTAR";
             this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.button1_Click);
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
-            // dataGridView1
+            // dgvPersona
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 189);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(326, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersona.Location = new System.Drawing.Point(12, 165);
+            this.dgvPersona.Name = "dgvPersona";
+            this.dgvPersona.Size = new System.Drawing.Size(340, 150);
+            this.dgvPersona.TabIndex = 3;
+            this.dgvPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersona_CellContentClick);
+            this.dgvPersona.SelectionChanged += new System.EventHandler(this.dgvPersona_SelectionChanged);
             // 
             // lblEdad
             // 
@@ -94,35 +96,37 @@ namespace CRUD_PERSONA
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(127, 107);
+            this.btnActualizar.Location = new System.Drawing.Point(93, 107);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(86, 23);
             this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(252, 107);
+            this.btnEliminar.Location = new System.Drawing.Point(185, 107);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(68, 148);
+            this.btnBuscar.Location = new System.Drawing.Point(277, 136);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 8;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button4_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(197, 148);
+            this.btnNuevo.Location = new System.Drawing.Point(277, 107);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 9;
@@ -131,19 +135,20 @@ namespace CRUD_PERSONA
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(350, 351);
+            this.ClientSize = new System.Drawing.Size(366, 351);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.lblEdad);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPersona);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Name = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,7 +161,7 @@ namespace CRUD_PERSONA
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPersona;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Button btnActualizar;
